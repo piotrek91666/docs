@@ -83,7 +83,6 @@ Will output:
 
     mkfs.ext4 /dev/sdb1 # For e2fsprogs < 1.43
     mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1 # For e2fsprogs >= 1.43
-
     dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8
 
 
