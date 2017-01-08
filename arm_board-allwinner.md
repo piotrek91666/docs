@@ -39,6 +39,8 @@
 - Unselect "Multimedia support","Sound card support"
 
 
+...then
+
     ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j5 zImage dtbs
     ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=out/ make modules modules_install
 
@@ -80,6 +82,7 @@ Will output:
 - Now type n, then p for primary, 1 for the first partition on the drive, 2048 for the first sector, and then press ENTER to accept the default last sector.
 - Write the partition table and exit by typing w.
 
+...then
 
     mkfs.ext4 /dev/sdb1 # For e2fsprogs < 1.43
     mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1 # For e2fsprogs >= 1.43
