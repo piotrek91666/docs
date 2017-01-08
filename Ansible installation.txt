@@ -1,0 +1,24 @@
+Ansible installation
+====================
+
+### Install debian/ubuntu packages:
+$apt install python-dev libffi-dev libssl-dev
+
+### Install pip in userspace:
+$curl -LO https://bootstrap.pypa.io/get-pip.py
+$python get-pip.py --user
+
+### Install ansible:
+$pip install ansible --user
+
+### Configuration:
+$mkdir -p ~/ansible/{group_vars,roles}
+$touch ~/ansible/hosts ~/ansible/group_vars/all
+$echo "export PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc
+$echo "export ANSIBLE_CONFIG=~/ansible/ansible.cfg" >> ~/.bashrc
+$curl -LO https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg -o ~/ansible/ansible.cfg
+### Change:
+-> inventory = $HOME/ansible/hosts
+-> roles_path = $HOME/ansible/roles
+-> log_path = $HOME/ansible/ansible.log
+
